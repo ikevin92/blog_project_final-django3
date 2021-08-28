@@ -5,6 +5,7 @@ from categories.models import Category
 
 
 class CategoryApiViewSet(ModelViewSet):
+    permission_classes = [isAdminOrReadOnly]
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
-    permission_classes = [isAdminOrReadOnly]
+    lookup_field = 'slug' # se reemplaza por el id
