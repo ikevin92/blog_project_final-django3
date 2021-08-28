@@ -8,10 +8,10 @@ from django_filters.rest_framework import DjangoFilterBackend, filterset
 class CategoryApiViewSet(ModelViewSet):
     permission_classes = [isAdminOrReadOnly]
     serializer_class = CategorySerializer
-    queryset = Category.objects.all()
-    # queryset = Category.objects.filter(published=True)
+    # queryset = Category.objects.all()
+    queryset = Category.objects.filter(published=True)
     lookup_field = 'slug'  # se reemplaza por el id (urlParam)
     # filtros (queryParams)
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['published']
+    filterset_fields = ['title']
 
