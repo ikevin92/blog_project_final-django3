@@ -8,6 +8,7 @@ from drf_yasg import openapi
 
 # rutas api import
 from categories.api.router import router_categories
+from posts.api.router import router_posts
 
 # documentacion swagger
 schema_view = get_schema_view(
@@ -32,5 +33,6 @@ urlpatterns = [
                                         cache_timeout=0), name='schema-redoc'),
     # auth/users
     path('api/', include('users.api.router')),
-    path('api/', include(router_categories.urls))
+    path('api/', include(router_categories.urls)),
+    path('api/', include(router_posts.urls))
 ]
