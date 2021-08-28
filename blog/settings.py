@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # aplicaciones
     'users',
+    'categories',
     # dependencias/librerias
     'rest_framework',
     'drf_yasg',
